@@ -23,3 +23,7 @@ Criar uma apresentação HTML/JPG de Nível 3 da Maratona Tech sobre um caso bra
 ## Regras visuais
 
 Canvas 1920×1080; título 54px; texto 24px; entrelinha 38px; rótulos 28px; fundo e ilustrações do template; cartões de alto contraste; no máximo quatro blocos de conteúdo por slide.
+
+## Nova exigência de evidência visual
+
+Para cada afirmação factual sobre o artefato, incluir no espaço de evidência o frame correspondente, com legenda curta, fonte, data e URL. Não usar ilustração do template como se fosse prova. Os frames devem ser preservados em `evidence/frames/`, possuir nome semântico e ser associados a um achado observável: contexto, marca-d’água, perspectiva ou física. Informar quando a imagem é reprodução educacional e não presumir licença comercial.
