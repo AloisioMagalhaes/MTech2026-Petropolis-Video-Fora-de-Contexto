@@ -36,8 +36,14 @@ for i,(section,title,paras,asset) in enumerate(S,1):
     im=Image.open(A/'template-capa-002.png').convert('RGB').resize((1920,1080)); d=ImageDraw.Draw(im)
     d.rectangle((0,0,1920,18),fill=(47,128,237)); d.rectangle((0,1062,1920,1080),fill=(246,195,68))
     d.rounded_rectangle((680,110,1850,1000),radius=28,fill=(247,251,255)); d.rounded_rectangle((70,220,650,850),radius=32,fill='white',outline=(199,215,229),width=5)
-    evidence={3:'frame-contexto.png',4:'frame-marca-dagua.png',6:'frame-perspectiva.png',14:'frame-fisica.png'}.get(i)
-    if evidence and (E/evidence).exists():
+    evidence={3:'frame-contexto.png',6:'frame-perspectiva.png',14:'frame-fisica.png'}.get(i)
+    if i==4:
+        montage=['frame-marca-dagua.png','frame-perspectiva.png','frame-fisica.png']; x0=105
+        for n,name in enumerate(montage):
+            src=Image.open(E/name).convert('RGB'); src.thumbnail((165,430)); im.paste(src,(x0+n*175,330))
+            d.text((x0+n*175,770),f'F{n+1}',font=ft(16,True),fill=(16,42,67))
+        d.text((105,790),'FRAMES F1–F3 · FONTE: AOS FATOS',font=ft(13,True),fill=(16,42,67))
+    elif evidence and (E/evidence).exists():
         a=Image.open(E/evidence).convert('RGB'); a.thumbnail((520,560)); im.paste(a,(360-a.width//2,535-a.height//2))
         d.text((105,790),'FRAME DA FONTE JORNALÍSTICA · AOS FATOS',font=ft(13,True),fill=(16,42,67))
     else:
