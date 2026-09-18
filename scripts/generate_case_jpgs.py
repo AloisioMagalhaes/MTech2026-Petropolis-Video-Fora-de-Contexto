@@ -24,6 +24,14 @@ S=[
 ('REFERÊNCIAS','Fontes citadas',['AOS FATOS (2026). Vídeos gerados por IA circulam como se mostrassem consequências das chuvas em MG.','G1 (2026). Cobertura dos temporais em Minas Gerais.','CNN BRASIL (2026). Cobertura dos temporais e impactos.','MIRSKY; LEE (2021). The creation and detection of deepfakes. ACM Computing Surveys.'],'template-icones-ilustracoes-107.png')]
 
 def draw_diagram(d,i):
+    if i==4:
+        cards=[('frame-marca-dagua.png','FRAME 01','MARCA-D’ÁGUA'),('frame-perspectiva.png','FRAME 02','PERSPECTIVA'),('frame-fisica.png','FRAME 03','FÍSICA DA ÁGUA')]
+        for n,(name,label,caption) in enumerate(cards):
+            x=735+n*365; y=690
+            d.rounded_rectangle((x,y,x+315,y+255),radius=16,fill=(16,42,67),outline=(246,195,68),width=3)
+            src=Image.open(E/name).convert('RGB'); src.thumbnail((275,175)); d.bitmap((x+20,y+18),src)
+            d.text((x+20,y+202),label,font=ft(18,True),fill=(246,195,68)); d.text((x+20,y+225),caption,font=ft(16,True),fill='white')
+        return
     labels={2:['PUBLICAÇÃO','LEGENDA','INTERPRETAÇÃO'],3:['ORIGINAL','IA','COMPARTILHAMENTO'],4:['FRAME 01','FRAME 02','FRAME 03'],5:['21 FEV','23–24 FEV','26–27 FEV'],6:['CONFIRMADO','LIMITAÇÃO','CONCLUSÃO'],7:['EMOÇÃO','ALCANCE','IMPACTO'],8:['INFORMAÇÃO','SOCIAL','CONFIANÇA'],9:['AOS FATOS','G1','CNN'],10:['PRESERVAR','COMPARAR','REGISTRAR'],11:['GERAR','ALTERAR','VERIFICAR'],12:['MINIMIZAR','ANONIMIZAR','ATRIBUIR'],13:['PAUSAR','CONFIRMAR','DENUNCIAR']}.get(i)
     if not labels:return
     y=820
@@ -37,13 +45,7 @@ for i,(section,title,paras,asset) in enumerate(S,1):
     d.rectangle((0,0,1920,18),fill=(47,128,237)); d.rectangle((0,1062,1920,1080),fill=(246,195,68))
     d.rounded_rectangle((680,110,1850,1000),radius=28,fill=(247,251,255)); d.rounded_rectangle((70,220,650,850),radius=32,fill='white',outline=(199,215,229),width=5)
     evidence={3:'frame-contexto.png',6:'frame-perspectiva.png',14:'frame-fisica.png'}.get(i)
-    if i==4:
-        montage=['frame-marca-dagua.png','frame-perspectiva.png','frame-fisica.png']; x0=105
-        for n,name in enumerate(montage):
-            src=Image.open(E/name).convert('RGB'); src.thumbnail((165,430)); im.paste(src,(x0+n*175,330))
-            d.text((x0+n*175,770),f'F{n+1}',font=ft(16,True),fill=(16,42,67))
-        d.text((105,790),'FRAMES F1–F3 · FONTE: AOS FATOS',font=ft(13,True),fill=(16,42,67))
-    elif evidence and (E/evidence).exists():
+    if evidence and (E/evidence).exists():
         a=Image.open(E/evidence).convert('RGB'); a.thumbnail((520,560)); im.paste(a,(360-a.width//2,535-a.height//2))
         d.text((105,790),'FRAME DA FONTE JORNALÍSTICA · AOS FATOS',font=ft(13,True),fill=(16,42,67))
     else:
