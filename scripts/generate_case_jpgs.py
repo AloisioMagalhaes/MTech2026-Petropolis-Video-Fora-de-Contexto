@@ -29,7 +29,7 @@ def draw_diagram(d,i):
         for n,(name,label,caption) in enumerate(cards):
             x=735+n*365; y=690
             d.rounded_rectangle((x,y,x+315,y+255),radius=16,fill=(16,42,67),outline=(246,195,68),width=3)
-            src=Image.open(E/name).convert('RGB'); src.thumbnail((275,175)); d.bitmap((x+20,y+18),src)
+            src=Image.open(E/name).convert('RGB'); src.thumbnail((275,175)); d._image.paste(src,(x+20,y+18))
             d.text((x+20,y+202),label,font=ft(18,True),fill=(246,195,68)); d.text((x+20,y+225),caption,font=ft(16,True),fill='white')
         return
     labels={2:['PUBLICAÇÃO','LEGENDA','INTERPRETAÇÃO'],3:['ORIGINAL','IA','COMPARTILHAMENTO'],4:['FRAME 01','FRAME 02','FRAME 03'],5:['21 FEV','23–24 FEV','26–27 FEV'],6:['CONFIRMADO','LIMITAÇÃO','CONCLUSÃO'],7:['EMOÇÃO','ALCANCE','IMPACTO'],8:['INFORMAÇÃO','SOCIAL','CONFIANÇA'],9:['AOS FATOS','G1','CNN'],10:['PRESERVAR','COMPARAR','REGISTRAR'],11:['GERAR','ALTERAR','VERIFICAR'],12:['MINIMIZAR','ANONIMIZAR','ATRIBUIR'],13:['PAUSAR','CONFIRMAR','DENUNCIAR']}.get(i)
