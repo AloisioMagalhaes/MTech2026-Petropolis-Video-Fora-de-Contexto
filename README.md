@@ -1,10 +1,10 @@
-# Maratona Tech 2026 — Exemplo docente N3
+# Maratona Tech 2026 — Vídeo sintético em enchentes
 
-Projeto-exemplo para o Ensino Médio (Nível 3), separado por documentação e construído a partir dos cinco materiais originais da Maratona Tech 2026. A apresentação não é uma entrega estudantil: é um modelo do que deve ser produzido e validado pelos grupos.
+Projeto-exemplo docente para o Ensino Médio (Nível 3), separado por documentação e construído a partir dos cinco materiais originais da Maratona Tech 2026. O caso trata da circulação de vídeos gerados por IA como se fossem registros das chuvas em Minas Gerais.
 
 ## Tema escolhido
 
-**Uso não autorizado de imagem e voz sintética em anúncio fraudulento: o caso Marcos Palmeira.** A CNN Brasil noticiou em 08 jun. 2024 que o ator afirmou ter sua imagem e voz manipuladas por IA em uma publicidade de kit de ferramentas que não autorizou. O caso foi escolhido por combinar artefato de publicidade digital, deepfake, circulação em rede, risco econômico e uso indevido de dados pessoais de imagem e voz, sem tratar de política, religião ou sexualidade.
+**Vídeos gerados por IA circulam como se mostrassem consequências das chuvas em MG.** A checagem do Aos Fatos registra publicação original anterior aos temporais, aviso do autor sobre geração sintética e análise quadro a quadro de inconsistências visuais. O caso foi escolhido por permitir investigar desinformação ampliada, causa-raiz, impacto social e rastreabilidade sem abordar política, religião ou sexualidade.
 
 ## Documentação de fonte única
 
